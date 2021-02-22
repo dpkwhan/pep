@@ -69,8 +69,13 @@ function largest_prime_factor_3(n::Int)::Int
     end
 end
 
+n = 600_851_475_142
 
-n = 600_851_475_143
-println("Method 1: ",  largest_prime_factor_1(n))
-println("Method 2: ",  largest_prime_factor_2(n))
-println("Method 3: ",  largest_prime_factor_3(n))
+println("Method 1:")
+println(@time largest_prime_factor_1(n))
+
+println("Method 2:")
+println(@time largest_prime_factor_2(n))
+
+println("Method 3:")
+println(@time largest_prime_factor_3(n))
