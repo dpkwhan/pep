@@ -2,11 +2,11 @@
 # See the overview: https://projecteuler.net/overview=001
 
 """
-    sum_looping(n::Int, d1::Int, d2::Int)::Int
+    sum_multiples_1(n::Int, d1::Int, d2::Int)::Int
 
 Calculate the sum of all multiples of two given integers using loops.
 """
-function sum_looping(n::Int, d1::Int, d2::Int)::Int
+function sum_multiples_1(n::Int, d1::Int, d2::Int)::Int
     sv = min(d1, d2)
     ev = n - 1
     s = 0
@@ -35,16 +35,16 @@ function sum_multiples_of(n::Int, d::Int)::Int
 end
 
 """
-    sum_formula(n::Int, d1::Int, d2::Int)::Int
+    sum_multiples_2(n::Int, d1::Int, d2::Int)::Int
 
 Calculate the sum of all multiples of two given integers using closed form formula.
 """
-function sum_formula(n::Int, d1::Int, d2::Int)::Int
+function sum_multiples_2(n::Int, d1::Int, d2::Int)::Int
     s1 = sum_multiples_of(n, d1)
     s2 = sum_multiples_of(n, d2)
     s3 = sum_multiples_of(n, d1*d2)
     return s1+s2-s3
 end
 
-println("Implementation by looping: ", sum_looping(1000, 3, 5))
-println("Implementation by formula: ", sum_formula(1000, 3, 5))
+println("Method 1: ", sum_multiples_1(1000, 3, 5))
+println("Method 2: ", sum_multiples_2(1000, 3, 5))

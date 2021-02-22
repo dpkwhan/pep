@@ -1,7 +1,7 @@
-# Problem 1: https://projecteuler.net/problem=1
+# Problem 1: https://projecteuler.net/problem=2
 # See the overview: https://projecteuler.net/overview=002
 
-function sum_even_fibonacci_number(maxvalue::Int)::Int
+function sum_even_fibonacci_number_1(maxvalue::Int)::Int
     maxvalue <= 1 && return 0
     
     s = 0
@@ -15,7 +15,7 @@ function sum_even_fibonacci_number(maxvalue::Int)::Int
     return s
 end
 
-function sum_every_third_fibonacci_number(maxvalue::Int)::Int
+function sum_even_fibonacci_number_2(maxvalue::Int)::Int
     maxvalue <= 1 && return 0
     
     s = 0
@@ -30,7 +30,7 @@ function sum_every_third_fibonacci_number(maxvalue::Int)::Int
     return s
 end
 
-function sum_fibonacci_number_recursive(maxvalue::Int)::Int
+function sum_even_fibonacci_number_3(maxvalue::Int)::Int
     if maxvalue < 2
         return 0
     elseif maxvalue < 8
@@ -51,6 +51,6 @@ function sum_fibonacci_number_recursive(maxvalue::Int)::Int
 end
 
 limit = 4_000_000
-println("Sum even numbers: ", sum_even_fibonacci_number(limit))
-println("Sum every third number: ", sum_every_third_fibonacci_number(limit))
-println("Sum recursively: ", sum_fibonacci_number_recursive(limit))
+println("Method 1: ", sum_even_fibonacci_number_1(limit))
+println("Method 1: ", sum_even_fibonacci_number_2(limit))
+println("Method 1: ", sum_even_fibonacci_number_3(limit))
