@@ -64,6 +64,34 @@ function palindromic_number_4()::Int
     return max_palindrome
 end
 
+function palindromic_number_5()::Int
+    max_palindrome = 0
+    a = 999
+    while a >= 100
+        if a % 11 == 0
+            b = 999
+            db = 1
+        else
+            b = 990
+            db = 11
+        end
+        
+        while b >= a
+            if a*b <= max_palindrome
+                break
+            end
+
+            if is_palindrome(a*b)
+                max_palindrome = a*b
+            end
+                
+            b -= db
+        end
+        a -= 1
+    end
+    return max_palindrome
+end
+
 println("Method 1:")
 println(@time palindromic_number_1())
 
@@ -75,3 +103,6 @@ println(@time palindromic_number_3())
 
 println("Method 4:")
 println(@time palindromic_number_4())
+
+println("Method 5:")
+println(@time palindromic_number_5())
