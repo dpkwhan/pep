@@ -46,5 +46,8 @@ function sum_multiples_2(n::Int, d1::Int, d2::Int)::Int
     return s1+s2-s3
 end
 
-println("Method 1: ", sum_multiples_1(1000, 3, 5))
-println("Method 2: ", sum_multiples_2(1000, 3, 5))
+println("Method 1:")
+println(@time sum_multiples_1(1000, 3, 5))
+
+println("Method 2:")
+println(@time sum_multiples_2(1000, 3, 5))
