@@ -1,3 +1,6 @@
+# Problem 1: https://projecteuler.net/problem=4
+# See the overview: https://projecteuler.net/overview=004
+
 function palindromic_number_1()::Int
     max_palindrome = 0
     for i = 100:999, j = 100:999
@@ -75,7 +78,7 @@ function palindromic_number_5()::Int
             b = 990
             db = 11
         end
-        
+
         while b >= a
             if a*b <= max_palindrome
                 break
